@@ -34,8 +34,8 @@ int main(int argc, const char *argv[])
 	rsaop(enc, src, 1);
 	rsaop(dec, enc, 0);
 	memcpy(hsrc, enc, 0x80);
-	//memcpy(hsrc + 0x80, &"+TEMP", 0x5);//Temporarily activate telnet
-	memcpy(hsrc + 0x80, &"+PERP", 0x5);//Permanetly activate telnet
+	memcpy(hsrc + 0x80, &"+TEMP", 0x5);//Temporarily activate telnet
+	//memcpy(hsrc + 0x80, &"+PERM", 0x5);//Permanetly activate telnet
 	md5raw(hs, hsrc, 0x80);
 	//print data
 	puts("src:");
